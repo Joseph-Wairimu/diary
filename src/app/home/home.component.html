@@ -18,7 +18,7 @@
                 <hr>
                 <ul>
                     <li *ngFor='let diary of diarys let i = index'>
-                        {{diary.id}}   {{diary.name}} <br>
+                        {{diary.id}}   {{diary.name}} due on {{diary.completeDate|date|uppercase}}<br>
                         <button (click)='Hide(i)'>Toggle</button>
                         <app-diary-content *ngIf='diary.showDescription' [diary]='diary' (isComplete) = 'completeGoal($event,i)' ></app-diary-content>
                     </li>
