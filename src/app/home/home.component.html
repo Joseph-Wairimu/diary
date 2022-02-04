@@ -19,6 +19,7 @@
                 <ul>
                     <li *ngFor='let diary of diarys'>
                         {{diary.id}}   {{diary.name}}
+                        <app-diary-content [diary]='diary'></app-diary-content>
                     </li>
                 </ul>
             </div>
