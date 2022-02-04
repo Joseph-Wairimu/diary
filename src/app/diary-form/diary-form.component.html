@@ -2,7 +2,7 @@
 <div class="container">
     <h2 class="text-center" style="color: aliceblue;">My Growth</h2>
     <hr>
-    <form>
+    <form (ngSubmit)='submitGoal()' #goalForm='ngForm'>
         <div class="form-group">
   
             <label for="name" style="color: aliceblue;">Name</label>
@@ -22,12 +22,12 @@
         </div>
         <div class="form-group">
             <label for="complete" style="color: aliceblue;">Period</label><br>
-            <input type='date' id="complete" required [(ngModel)]="newDiary.completeDate" name="completeDate" #completeDate="ngModel" >
+            <input type='date' id="complete" required [(ngModel)]="newDiary.completeDate" name="completeDate" #completeDate="ngModel" required >
             <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
                 <p>Date is required</p>
               </div>
         </div><br>
-        <button type="submit" class="btn btn-success " >Add Goal</button>
+        <button type="submit" class="btn btn-success " >Add </button>
     </form>
   </div>
 </div>

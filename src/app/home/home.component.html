@@ -10,12 +10,14 @@
         <div class="row ">
 
             <div class="col-md-6" style="background-color:black;">
-
-                <app-diary-form></app-diary-form>
+             
+                    <app-diary-form (addDiary)="addNewDiary($event)"></app-diary-form>
+               
             </div>
             <div  class="col-md-6" style="text-align: center; background-color: #92A9BD;">
                 <h2>My Progress</h2>
                 <hr>
+ 
                 <ul>
                     <li *ngFor='let diary of diarys let i = index'>
                         {{diary.id}}   {{diary.name}} due on {{diary.completeDate|date|uppercase}}<br>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { Diary } from '../diary';
 @Component({
   selector: 'app-diary-form',
@@ -9,6 +9,11 @@ export class DiaryFormComponent implements OnInit {
 
   newDiary = new Diary(0,"","",new Date());
   
+  @Output() addDiary = new EventEmitter<Diary>();
+
+  submitGoal(){
+this.addDiary.emit(this.newDiary);
+  }
   constructor() { }
 
   ngOnInit(): void {
