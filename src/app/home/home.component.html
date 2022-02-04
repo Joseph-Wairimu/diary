@@ -1,7 +1,10 @@
 <div class="container-fluid bodyy">
     <div class="head">
+        <img src="../assets/logo.jpg" style="height: 6rem;" alt="">
         <h1>My Personal Journal</h1>
         <hr>
+     
+       
         </div>
         
         <div class="row ">
@@ -13,7 +16,13 @@
             <div  class="col-md-6" style="text-align: center; background-color: #92A9BD;">
                 <h2>My Progress</h2>
                 <hr>
+                <ul>
+                    <li *ngFor='let diary of diarys'>
+                        {{diary.id}}   {{diary.name}}
+                    </li>
+                </ul>
             </div>
 
-    </div>
+    </div><br>
+    <p class="text-center">for the  &#128525; of coding</p>
 </div>
