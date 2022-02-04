@@ -21,7 +21,11 @@ Hide(index:any){
 
   completeGoal(isComplete:any, index:any){
     if (isComplete) {
-      this.diarys.splice(index,1);
+      let toDelete = confirm(`Are you sure you want to delete ${this.diarys[index].name}?`)
+
+      if (toDelete){
+        this.diarys.splice(index,1)
+      }
     }
   }
   constructor() { }
