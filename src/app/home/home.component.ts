@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
     new Diary(5,'Solve math homework','Damn Math'),
     new Diary(6,'Plot my world domination plan','Cause I am an evil overlord'),
   ];
+
+Hide(index:any){
+    this.diarys[index].showDescription = !this.diarys[index].showDescription;
+  }
   constructor() { }
 
   ngOnInit(): void {

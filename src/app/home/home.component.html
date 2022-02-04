@@ -17,9 +17,10 @@
                 <h2>My Progress</h2>
                 <hr>
                 <ul>
-                    <li *ngFor='let diary of diarys'>
-                        {{diary.id}}   {{diary.name}}
-                        <app-diary-content [diary]='diary'></app-diary-content>
+                    <li *ngFor='let diary of diarys let i = index'>
+                        {{diary.id}}   {{diary.name}} <br>
+                        <button (click)='Hide(i)'>Toggle</button>
+                        <app-diary-content *ngIf='diary.showDescription' [diary]='diary'></app-diary-content>
                     </li>
                 </ul>
             </div>
