@@ -18,6 +18,12 @@ export class HomeComponent implements OnInit {
 Hide(index:any){
     this.diarys[index].showDescription = !this.diarys[index].showDescription;
   }
+
+  completeGoal(isComplete:any, index:any){
+    if (isComplete) {
+      this.diarys.splice(index,1);
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {

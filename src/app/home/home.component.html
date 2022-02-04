@@ -20,7 +20,7 @@
                     <li *ngFor='let diary of diarys let i = index'>
                         {{diary.id}}   {{diary.name}} <br>
                         <button (click)='Hide(i)'>Toggle</button>
-                        <app-diary-content *ngIf='diary.showDescription' [diary]='diary'></app-diary-content>
+                        <app-diary-content *ngIf='diary.showDescription' [diary]='diary' (isComplete) = 'completeGoal($event,i)' ></app-diary-content>
                     </li>
                 </ul>
             </div>
