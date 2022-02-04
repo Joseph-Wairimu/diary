@@ -15,13 +15,17 @@
         <div class="form-group">
   
             <label for="description" style="color: aliceblue;">Description</label>
-            <textarea class="form-control" id="description" rows="4" required></textarea>
-  
+            <textarea class="form-control" id="description" rows="4" required [(ngModel)]="newDiary.description" name="description" #description="ngModel"></textarea>
+            <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+                <p>Description is required</p>
+              </div>
         </div>
         <div class="form-group">
             <label for="complete" style="color: aliceblue;">Period</label><br>
-            <input type='date' id="complete" required>
-  
+            <input type='date' id="complete" required [(ngModel)]="newDiary.completeDate" name="completeDate" #completeDate="ngModel" >
+            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                <p>Date is required</p>
+              </div>
         </div><br>
         <button type="submit" class="btn btn-success " >Add Goal</button>
     </form>
